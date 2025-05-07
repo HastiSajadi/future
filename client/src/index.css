@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
+    
+    /* UI components */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+    
+    --primary: 0 0% 20%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 0 0% 40%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 50%;
+    
+    --accent: 0 0% 7%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 82%;
+    
+    /* Custom theme colors */
+    --theme-dark: 0, 0%, 20%;
+    --theme-light: 0, 0%, 96%;
+    --theme-accent: 0, 0%, 7%;
+    --theme-primary: 0, 0%, 20%;
+    --theme-secondary: 0, 0%, 40%;
+    
+    /* Font related */
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-heading: 'Montserrat', system-ui, sans-serif;
+    --font-size-base: 16px;
+    --font-line-height: 1.5;
+    
+    /* Border radius */
+    --radius: 0.5rem;
+    --radius-full: 9999px;
+    
+    /* Spacing */
+    --section-spacing: 5rem;
+    --container-padding: 1rem;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-size: var(--font-size-base);
+    line-height: var(--font-line-height);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+  
+  .section-fullscreen {
+    @apply w-full;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .section-large {
+    @apply w-full py-16 md:py-24;
+    min-height: 80vh;
+  }
+  
+  .section-medium {
+    @apply w-full py-12 md:py-16;
+    min-height: 60vh;
+  }
+  
+  .btn-primary {
+    @apply bg-[#333333] hover:bg-black text-white px-6 py-2 rounded-full transition duration-300;
+    background-color: hsl(var(--theme-primary));
+    border-radius: var(--radius-full);
+  }
+  
+  .btn-secondary {
+    @apply text-sm font-medium px-4 py-2 border border-gray-300 rounded-full hover:bg-[#F5F5F5] transition duration-300;
+    border-radius: var(--radius-full);
+  }
+  
+  .card-link {
+    @apply block transition-transform duration-300 hover:scale-[1.02];
+  }
+  
+  /* Typewriter animation classes */
+  .typewriter-cursor {
+    @apply inline-block w-0.5 h-5 bg-current animate-blink;
+  }
+  
+  /* Header transition classes */
+  .header-transparent {
+    @apply text-white transition-all duration-300;
+    background-color: transparent !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  
+  .header-solid {
+    @apply bg-white text-black shadow-sm transition-all duration-300;
+    background-color: white !important;
+  }
+  
+  /* Fix for image display */
+  .product-image {
+    @apply w-full h-full object-cover aspect-square bg-gray-100;
+    max-height: 300px;
+  }
+}
