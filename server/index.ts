@@ -1,5 +1,5 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
+import { registerRoutes } from "./routes.js";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
@@ -62,7 +62,7 @@ app.use((req, res, next) => {
   const port = 5000;
   server.listen({
     port,
-    host: "0.0.0.0",
+    host: "127.0.0.1",
     reusePort: true,
   }, () => {
     log(`serving on port ${port}`);

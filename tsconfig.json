@@ -4,17 +4,19 @@
   "compilerOptions": {
     "incremental": true,
     "tsBuildInfoFile": "./node_modules/typescript/tsbuildinfo",
-    "noEmit": true,
+    "noEmit": false,                               // 👈 باید فایل بسازه
     "module": "ESNext",
     "strict": true,
     "lib": ["esnext", "dom", "dom.iterable"],
     "jsx": "preserve",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "allowImportingTsExtensions": true,
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
+    "target": "ES2020",
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "types": ["node", "vite/client"],
+    "outDir": "dist",
     "paths": {
       "@db": ["./db/index.ts"],
       "@db/*": ["./db/*"],
